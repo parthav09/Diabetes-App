@@ -1,5 +1,5 @@
 streamlit==0.85.0
 pandas>=0.19
 lightgbm>=3.3.0
-pickle>=0.0
+pickle>=4.0
 scikit-learn>=0.18
