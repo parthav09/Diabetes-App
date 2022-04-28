@@ -50,7 +50,7 @@ pred_acc.append(test_accuracy)
 print(pred_acc)
 # create an iterator object with write permission - model.pkl
 with open(f'model.pkl', 'wb') as files:
-    pickle.dump(model, files)
+    pickle.dump(cat, files)
 
 
 
