@@ -1,5 +1,6 @@
-streamlit>=0.57.3
-pandas>=0.19
-lightgbm>=3.3.0
-scikit-learn>=0.18
+streamlit>=0.57.3==None
+pandas>=0.19==None
+lightgbm>=3.3.0==None
+scikit-learn>=0.18==None
 collection==0.1.6
+matplotlib==3.5.1
