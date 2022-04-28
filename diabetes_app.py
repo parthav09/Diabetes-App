@@ -14,7 +14,7 @@ with st.form('Enter the details below'):
     st.write('Enter the Blood pressure level')
     bp = st.slider(label="Drag the Slider Below", min_value=0, max_value=2900, key='bp')
 
-    st.write('Enter the Skin thickness')
+    st.write('Enter your Skin thickness')
     thickness = st.slider(label="Drag the Slider Below", min_value=0, max_value=50, key='thickness')
 
     st.write('Enter the Insulin level')
