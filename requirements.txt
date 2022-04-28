@@ -1,0 +1,4 @@
+streamlit==0.85.0
+pandas>=0.19
+lightgbm>=3.3.0
+scikit-learn>=0.18
