@@ -39,7 +39,7 @@ if submitted:
     model = pickle.load(pickle_in)
     result = model.predict(X)
 
-    if result == 0:
+    if result == 1:
         st.header("You have been suffering through **diabetes**.")
     else:
         st.header("Have some chocolates.")

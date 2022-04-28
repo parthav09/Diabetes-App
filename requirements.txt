@@ -4,3 +4,4 @@ lightgbm>=3.3.0==None
 scikit-learn>=0.18==None
 collection==0.1.6
 matplotlib==3.5.1
+ensemble==0.0.dev1
