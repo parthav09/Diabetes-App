@@ -3,6 +3,7 @@ from lightgbm import LGBMClassifier
 from sklearn import metrics, preprocessing
 from sklearn.model_selection import train_test_split
 import pickle
+from xgboost import XGBClassifier
 import matplotlib.pyplot as plt
 
 
@@ -20,32 +21,33 @@ scaler = preprocessing.StandardScaler()
 x_train = scaler.fit_transform(X_train)
 x_valid = scaler.transform(X_test)
 
-cat = LGBMClassifier(
-    max_depth=3,
+cat = XGBClassifier(
+    max_depth=5,
     n_estimators=700,
-    random_state=42,
     learning_rate=0.01,
     verbose=0,
     reg_alpha=25,
-    early_stopping_rounds=1000
+    early_stopping_rounds=500,
 )
 
 cat.fit(x_train, y_train, eval_set=[(x_valid, y_test)])
 preds_train = cat.predict(x_train)
 preds_valid = cat.predict(x_valid)
 
+print("Accuracy Score")
+print("*"*50)
+print("Training")
 train_accuracy = metrics.accuracy_score(y_train, preds_train)
+print("Test")
 test_accuracy = metrics.accuracy_score(y_test, preds_valid)
+print('/n')
 
-train_acc.append(train_accuracy)
-pred_acc.append(test_accuracy)
-
-# plt.plot(train_acc, label="train")
-# plt.plot(pred_acc, label="test")
-# plt.xlabel('max_depth', size = 20)
-# plt.ylabel('accuracy', size=20)
-# plt.legend(loc = 'upper left', prop = {'size':15})
-# plt.show()
+print('Classification report')
+print('*'*50)
+print('Training')
+train_accuracy = metrics.classification_report(y_test, preds_valid)
+print('Test')
+print(metrics.confusion_matrix(y_test, preds_valid))
 
 print(pred_acc)
 # create an iterator object with write permission - model.pkl
